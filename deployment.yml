@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: puzzle-game-deployment
+  labels:
+    app: puzzle-game
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: puzzle-game
+  template:
+    metadata:
+      labels:
+        app: puzzle-game
+    spec:
+      containers:
+      - name: puzzle-game
+        image: surya8442/sliding-block-puzzle-game:v1   
+        ports:
+        - containerPort: 8080
+        
