@@ -35,7 +35,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('sq') {
                     sh '''
-                    /opt/sonar-scanner/bin/sonar-scanner \
+                    ${scannerHome}/bin/sonar-scanner \
                     -Dsonar.projectKey=game \
                     -Dsonar.sources=src \
                     -Dsonar.projectName=game-App \
