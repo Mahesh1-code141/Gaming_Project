@@ -11,7 +11,7 @@ pipeline {
         IMAGE_TAG = "${BUILD_NUMBER}"   // dynamic tagging (better than v1)
         KUBECONFIG = '/var/lib/jenkins/.kube/config'
         NEXUS_URL = "http://43.204.230.76:8081/repository/puzzlegame"
-        RECIPIENTS = "suryakandipalli@gmail.com"
+        RECIPIENTS = "maheshbabuya@gmail.com"
     }
 
     stages {
