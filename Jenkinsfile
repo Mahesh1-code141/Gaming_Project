@@ -31,19 +31,22 @@ pipeline {
         }
 
         // -------------------------------
-        stage('SonarQube Analysis') {
-            steps {
-                withSonarQubeEnv('sq') {
-                    sh '''
-                    ${scannerHome}/bin/sonar-scanner \
-                    -Dsonar.projectKey=game \
-                    -Dsonar.sources=src \
-                    -Dsonar.projectName=game-App \
-                    -Dsonar.projectVersion=${BUILD_NUMBER}
-                    '''
-                }
+stage('SonarQube Analysis') {
+    steps {
+        script {
+            def scannerHome = tool 'sonar-scanner'
+            withSonarQubeEnv('sq') {
+                sh """
+                ${scannerHome}/bin/sonar-scanner \
+                -Dsonar.projectKey=game \
+                -Dsonar.sources=src \
+                -Dsonar.projectName=game-App \
+                -Dsonar.projectVersion=${BUILD_NUMBER}
+                """
             }
         }
+    }
+}
 
 
         // -------------------------------
