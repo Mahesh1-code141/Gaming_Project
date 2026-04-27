@@ -10,7 +10,7 @@ pipeline {
         IMAGE_NAME = "sliding-block-puzzle-game"
         IMAGE_TAG = "${BUILD_NUMBER}"   // dynamic tagging (better than v1)
         KUBECONFIG = '/var/lib/jenkins/.kube/config'
-        NEXUS_URL = "http://43.204.230.76:8081/repository/puzzlegame"
+        NEXUS_URL = "http://35.154.38.205:8081/repository/puzzlegame"
         RECIPIENTS = "maheshbabuya@gmail.com"
     }
 
